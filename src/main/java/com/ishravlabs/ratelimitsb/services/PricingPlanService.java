@@ -1,5 +1,6 @@
-package com.ishravlabs.ratelimitsb;
+package com.ishravlabs.ratelimitsb.services;
 
+import com.ishravlabs.ratelimitsb.enums.PricingPlan;
 import io.github.bucket4j.Bucket;
 import org.springframework.stereotype.Service;
 

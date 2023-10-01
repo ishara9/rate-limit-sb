@@ -1,5 +1,7 @@
-package com.ishravlabs.ratelimitsb;
+package com.ishravlabs.ratelimitsb.interceptors;
 
+import com.ishravlabs.ratelimitsb.CustomException;
+import com.ishravlabs.ratelimitsb.services.PricingPlanService;
 import io.github.bucket4j.Bucket;
 import io.github.bucket4j.ConsumptionProbe;
 import javax.servlet.http.HttpServletRequest;
@@ -8,8 +10,6 @@ import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.servlet.HandlerInterceptor;
 
 @AllArgsConstructor
@@ -25,11 +25,7 @@ public class RateLimitInterceptor implements HandlerInterceptor {
     String apiKey = request.getHeader("X-api-key");
     if (apiKey == null || apiKey.isEmpty()) {
       String errorMessage = "Missing Header: X-api-key";
-      response.sendError(HttpStatus.BAD_REQUEST.value(), errorMessage);
-//      response.getWriter().write(errorMessage);
-//      response.setStatus(HttpStatus.BAD_REQUEST.value());
-//      response.setContentType(MediaType.APPLICATION_JSON_VALUE);
-      return false;
+      throw new CustomException(errorMessage, new Throwable(HttpStatus.BAD_REQUEST.toString()));
     }
 
     Bucket bucket = pricingPlanService.resolverBucket(apiKey);

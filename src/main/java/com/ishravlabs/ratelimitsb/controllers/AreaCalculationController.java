@@ -1,5 +1,7 @@
-package com.ishravlabs.ratelimitsb;
+package com.ishravlabs.ratelimitsb.controllers;
 
+import com.ishravlabs.ratelimitsb.dto.AreaV1;
+import com.ishravlabs.ratelimitsb.dto.RectangleDimensionsV1;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;

@@ -1,4 +1,4 @@
-package com.ishravlabs.ratelimitsb;
+package com.ishravlabs.ratelimitsb.dto;
 
 public class RectangleDimensionsV1 {
     private Long length;

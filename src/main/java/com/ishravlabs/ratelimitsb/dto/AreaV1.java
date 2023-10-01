@@ -1,4 +1,4 @@
-package com.ishravlabs.ratelimitsb;
+package com.ishravlabs.ratelimitsb.dto;
 
 public class AreaV1 {
   private final String rectangle;

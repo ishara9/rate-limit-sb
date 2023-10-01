@@ -1,5 +1,6 @@
 package com.ishravlabs.ratelimitsb;
 
+import com.ishravlabs.ratelimitsb.interceptors.RateLimitInterceptor;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
