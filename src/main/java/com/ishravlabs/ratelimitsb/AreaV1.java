@@ -4,12 +4,9 @@ public class AreaV1 {
   private final String rectangle;
   private final long area;
 
-  private final long requests;
-
-  public AreaV1(String rectangle, long area, long requests) {
+  public AreaV1(String rectangle, long area) {
     this.rectangle = rectangle;
     this.area = area;
-    this.requests = requests;
   }
 
   public String getRectangle() {
@@ -18,9 +15,5 @@ public class AreaV1 {
 
   public long getArea() {
     return area;
-  }
-
-  public long getRequests() {
-    return requests;
   }
 }
