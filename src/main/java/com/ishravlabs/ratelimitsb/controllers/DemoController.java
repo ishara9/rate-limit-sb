@@ -24,6 +24,7 @@ public class DemoController {
         return ("<h1>welcome admin</h1>");
     }
 
+
     @GetMapping("/set-cookie")
     public String setCookie(HttpServletResponse response) {
         // Create a new cookie
